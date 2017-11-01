@@ -1,0 +1,49 @@
+.App {
+  max-width: 720px;
+  margin: auto;
+  text-align: center;
+}
+
+.title {
+  color: #9d0000;
+}
+
+.form-item {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #303030;
+  color: #8d8c8c;
+  border: 1px solid #303030;
+  border-radius: 5px;
+}
+
+input {
+  font-size: 3em;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+  border-color: #9d0000;
+}
+
+button {
+  font-size: 2em;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+#circle {
+  fill: transparent;
+  stroke: #9d0000;
+  stroke-width: 10px;
+  cursor: pointer;
+}
+
+.error {
+  color: #9d0000;
+}
