@@ -9,7 +9,8 @@ class App extends Component {
       value: '',
       diameter: '',
       error: '',
-      message: {}
+      message: {},
+      loading: false
     };
     this.setValue = this.setValue.bind(this);
     this.drawCircle = this.drawCircle.bind(this);
@@ -35,8 +36,10 @@ class App extends Component {
   
   getPost() {
     const postId = this.state.diameter;
+    this.setState({loading: true});
     axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`).then((res) => {
       this.setState({message: res.data});
+      this.setState({loading: false});
     })
   }
   
@@ -54,6 +57,9 @@ class App extends Component {
           </svg>
         </div>
         <div>
+          {this.state.loading &&
+            <div className="loader">Loading...</div>
+          }
           <h2>{this.state.message.title}</h2>
           <p>{this.state.message.body}</p>
         </div>
