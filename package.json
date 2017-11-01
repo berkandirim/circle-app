@@ -2,6 +2,7 @@
   "name": "circle-app",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "https://berkandirim.github.io/circle-app",
   "dependencies": {
     "axios": "^0.17.0",
     "push-dir": "^0.4.1",
