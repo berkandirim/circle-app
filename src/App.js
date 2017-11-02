@@ -76,7 +76,7 @@ class App extends Component {
         <button className="form-item" onClick={this.drawCircle}>OK</button>
         <p className="error">{this.state.error}</p>
         {!this.state.error &&
-          <div className="circle-container" style={{maxWidth: (this.state.diameter * 3) + 'px'}}>
+          <div className="circle-container">
             <div className="circle">
               <svg onClick={this.getPost}
                    version="1.1"
