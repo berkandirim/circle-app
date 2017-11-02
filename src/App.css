@@ -1,6 +1,7 @@
-.App {
+.app {
   max-width: 720px;
   margin: auto;
+  padding: 40px 20px;
   text-align: center;
 }
 
@@ -44,6 +45,18 @@ button:focus {
   outline: none;
 }
 
+.circle-container {
+  margin: auto;
+}
+
+.circle {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  vertical-align: middle;
+}
+
 svg {
   display: inline-block;
   position: absolute;
@@ -51,14 +64,7 @@ svg {
   left: 0;
 }
 
-.circle-container {
-  position: relative;
-  width: 280px;
-  height: 280px;
-  margin: auto;
-}
-
-.circle {
+circle {
   fill: #9d0000;
   cursor: pointer;
   transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19) 500ms;
@@ -123,4 +129,13 @@ svg {
 .text {
   animation-name: fadeIn;
   animation-duration: 3s;
+}
+
+@media only screen and (max-width: 480px) {
+  .app {
+    padding: 10px 15px;
+  }
+  .form-item {
+    font-size: 1em;
+  }
 }

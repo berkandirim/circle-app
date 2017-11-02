@@ -56,12 +56,16 @@ class App extends Component {
         message: res.data,
         loading: false
       });
+      window.scroll({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+      });
     })
   }
   
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <h1 className="title">CIRCLE APP</h1>
         <p>Please enter an integer between 0 and 100</p>
         <input
@@ -72,17 +76,18 @@ class App extends Component {
         <button className="form-item" onClick={this.drawCircle}>OK</button>
         <p className="error">{this.state.error}</p>
         {!this.state.error &&
-          <div className="circle-container">
-            <svg onClick={this.getPost} 
-                 version="1.1" 
-                 xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 500 500"
-                 preserveAspectRatio="xMinYMin meet">
-              <circle className="circle" r={this.state.diameter / 2 + '%'} cx="50%" cy="50%"></circle>
-            </svg>
+          <div className="circle-container" style={{maxWidth: (this.state.diameter * 3) + 'px'}}>
+            <div className="circle">
+              <svg onClick={this.getPost}
+                   version="1.1"
+                   xmlns="http://www.w3.org/2000/svg"
+                   viewBox="0 0 500 500"
+                   preserveAspectRatio="xMinYMin meet">
+                <circle className="circle" r={this.state.diameter / 2 + '%'} cx="50%" cy="50%"></circle>
+              </svg>
+            </div>
           </div>
         }
-        <div>
           {this.state.loading &&
             <div className="loader">Loading...</div>
           }
@@ -90,7 +95,6 @@ class App extends Component {
             <h2>{this.state.message.title}</h2>
             <p>{this.state.message.body}</p>
           </div>
-        </div>
       </div>
     );
   }
